@@ -1,0 +1,1 @@
+{"headers":[{"source":"/wasm/(.*)","headers":[{"key":"Content-Type","value":"application/wasm"}]},{"source":"/(.*).wasm","headers":[{"key":"Content-Type","value":"application/wasm"}]},{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"}]}],"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}

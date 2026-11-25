@@ -2,7 +2,7 @@
 set -euo pipefail
 command -v tinygo >/dev/null || { echo "Install TinyGo 0.34+ first" >&2; exit 1; }
 mkdir -p public/wasm
-tinygo build -o public/wasm/kodiledger.wasm -target wasm -no-debug ./go-core
+(cd go-core && tinygo build -o ../public/wasm/kodiledger.wasm -target wasm -no-debug .)
 GOROOT="$(go env GOROOT)"
 RUNTIME="$GOROOT/lib/wasm/wasm_exec.js"
 if [ ! -f "$RUNTIME" ]; then RUNTIME="$GOROOT/misc/wasm/wasm_exec.js"; fi
